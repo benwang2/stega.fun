@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>stega.fun - Simple steganography tool</title>
+
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://kit.fontawesome.com/43356c6d09.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="resources/css/hamburgers.css">
+
+        <link rel="shortcut icon" type="image/jpg" href="resources/images/favicon.jpg">
+        <script src="script.js"></script>        
+    </head>
+    <body>
+        <div class="sidebar">
+            <div style="padding-top:100px"></div>
+            <div class="nav-link">
+                <a href="/" style="margin-left: 40px">HOME</a>
+            </div>
+            <div class="nav-link">
+                <a href="/about" style="margin-left: 40px">ABOUT</a>
+            </div>
+            
+        </div>
+        <nav>
+            <button id="hamburger" class="hamburger hamburger--arrow" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </nav>
+        <center>
+            <div class="wrapper">
+                <div class="title">
+                    STEGA.FUN
+                </div>
+                <p>
+                    Upload an <span style="color:#da433a">image</span> or <span style="color:#da433a">audio</span> file to encode it with data.
+                </p>
+                <div class="file-upload-container">
+                    <!-- https://codepen.io/gaitho/pen/mjBBLP reference -->
+                    <form id="file-upload-form" class="uploader">
+                        <input id="file-upload" type="file" name="fileUpload" accept="image/audio/*"/>  
+                    </form>
+                </div>
+            </div>
+            <footer>
+                <img id="footer-img" src="resources/images/transparent.png">
+            </footer>
+        </center>
+    </body>
+</html>
