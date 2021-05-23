@@ -9,9 +9,12 @@
         <script src="https://kit.fontawesome.com/43356c6d09.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="resources/css/hamburgers.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 
         <link rel="shortcut icon" type="image/jpg" href="resources/images/favicon.jpg">
-        <script src="script.js"></script>        
+        <script src="script.js"></script>
+        <script src="resources/js/steganography.js"></script>
     </head>
     <body>
         <div class="sidebar">
@@ -22,7 +25,6 @@
             <div class="nav-link">
                 <a href="/about" style="margin-left: 40px">ABOUT</a>
             </div>
-            
         </div>
         <nav>
             <button id="hamburger" class="hamburger hamburger--arrow" type="button">
@@ -41,10 +43,39 @@
                 </p>
                 <div class="file-upload-container">
                     <!-- https://codepen.io/gaitho/pen/mjBBLP reference -->
+                    <div id="output" class="hidden">
+                        <canvas id="canvas"></canvas>
+                    </div>
+
+                    <div id="options" class="hidden">
+                        <label for="fname">File name:</label>
+                        <input type="text" id="fname" name="fname" value="" disabled autocomplete="off"><br><br>
+                        <label for="message">Message:</label>
+                        <input type="text" id="message" name="message" autocomplete="off"><br><br>
+                        <label for="secret">Secret:</label>
+                        <input type="text" id="secret" name="secret" autocomplete="off"><br><br>
+                        <div style="display: flex; flex-direction: row; justify-content: center;">
+                            <div class="button" id="encode">encode</div>
+                            <div style="padding:12px"></div>
+                            <div class="button" id="decode">decode</div>
+                        </div>
+                    </div>
                     <form id="file-upload-form" class="uploader">
-                        <input id="file-upload" type="file" name="fileUpload" accept="image/audio/*"/>  
+                        <label for="file-upload" id="file-drag" >
+                            <img id="file-image" src="#" alt="Preview" class="hidden">
+                            <div id="start">
+                            <i class="fa fa-download fa-3x" aria-hidden="true"></i>
+                            <div style="padding-top: 12px; padding-bottom: 24px;"></div>
+                            <span id="file-upload-btn" class="button">Select a file</span>
+                            </div>
+                            <div id="messages"></div>
+                            </div>
+                        </label>
+                        <input id="file-upload" type="file" name="fileUpload" accept="image/audio/*" style="display:none;"/>
                     </form>
+                    
                 </div>
+                
             </div>
             <footer>
                 <img id="footer-img" src="resources/images/transparent.png">

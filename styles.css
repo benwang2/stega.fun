@@ -49,13 +49,26 @@ a {
     padding-bottom: 20px;
 }
 
-.button, a {
+.button {
+    padding: 6px;
+    width: max-content;
+    background-color: #da433a;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+
+.button:hover {
+    background-color: #f36f68;
+}
+
+a { 
     color:#f7f7f7;
+    cursor: pointer;
     transition: opacity 0.275s cubic-bezier(0.68, 0.55, 0.265, 1.55);
 }
 
-.button:hover, a:hover{
-    cursor: pointer;
+a:hover{
     opacity: 0.8
 }
 
@@ -86,12 +99,35 @@ a {
 }
 
 .file-upload-container {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     min-width: 300px;
     max-width: 500px;
-    height: 400px;
+    min-height: 130px;
+    height: max-content;
     border:#f7f7f7 solid 2px;
     border-radius: 24px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.file-upload-container:hover {
+    border-color: #da433a;
+}
+
+.file-upload-container > label {
+    float: left;
+    clear: both;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    background: #fff;
+    border-radius: 7px;
+    border: 3px solid #eee;
+    transition: all .2s ease;
+    user-select: none;
 }
 
 #footer-img {
@@ -99,4 +135,8 @@ a {
     height: 200px;
     object-fit: cover;
     border-radius: 12px;
+}
+
+.hidden {
+    display: none;
 }
