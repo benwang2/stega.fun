@@ -1,4 +1,4 @@
-var canvas, ctx;
+var canvas, ctx, output, fields;
 
 window.addEventListener("load",onPageLoaded)
 
@@ -7,15 +7,17 @@ function onPageLoaded(){
     var sidebar = document.querySelector(".sidebar")
     var uploader = document.getElementById("file-upload")
 
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext('2d');
+    output = document.getElementById("output");
+    canvas = document.getElementById("canvas");
+    ctx = canvas.getContext('2d');
 
+    var download = document.getElementById("download")
     var encode = document.getElementById("encode")
     var decode = document.getElementById("decode")
 
     var inputs = [document.getElementById("file-upload-form"),document.getElementById("options")]
 
-    var fields = {}
+    fields = {}
     var image = null;
 
     for (const field of ["fname","message","secret","encode","decode"]){
@@ -53,10 +55,29 @@ function onPageLoaded(){
         reader.readAsDataURL(e.target.files[0]); 
     }
 
+    document.getElementById("hide-output").addEventListener("click",()=>{
+        output.classList.add("hidden")
+    })
+    document.getElementById("hide-options").addEventListener("click",()=>{
+        inputs[1].classList.add("hidden")
+        if (inputs[0].classList.contains("hidden"))
+            inputs[0].classList.remove("hidden")
+    })
     hamburger.addEventListener("click", toggleMenu)
     uploader.addEventListener("change", onUploadChanged, false)
 
     encode.addEventListener("click",()=>{
         encodeImage(image, ctx, fields["message"].value, fields["secret"].value)
+    })
+
+    decode.addEventListener("click",()=>{
+        decodeImage(image, ctx, fields["secret"].value)
+    })
+
+    var link = document.createElement('a');
+    download.addEventListener("click",()=>{
+        link.download = fields["fname"].value;
+        link.href = canvas.toDataURL()
+        link.click();
     })
 }

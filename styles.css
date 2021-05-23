@@ -99,6 +99,7 @@ a:hover{
 }
 
 .file-upload-container {
+    position: relative;
     padding-top: 32px;
     padding-bottom: 32px;
     display: flex;
@@ -128,6 +129,14 @@ a:hover{
     border: 3px solid #eee;
     transition: all .2s ease;
     user-select: none;
+}
+
+#output {
+    z-index: 1;
+    position: absolute;
+    padding: 24px;
+    background: #1b1b1b;
+    border-radius: 12px;
 }
 
 #footer-img {

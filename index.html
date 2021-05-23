@@ -7,12 +7,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <script src="https://kit.fontawesome.com/43356c6d09.js" crossorigin="anonymous"></script>
+
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="resources/css/hamburgers.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
-
         <link rel="shortcut icon" type="image/jpg" href="resources/images/favicon.jpg">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+        
+        
+
+        
         <script src="script.js"></script>
         <script src="resources/js/steganography.js"></script>
     </head>
@@ -39,15 +45,18 @@
                     STEGA.FUN
                 </div>
                 <p>
-                    Upload an <span style="color:#da433a">image</span> or <span style="color:#da433a">audio</span> file to encode it with data.
+                    Upload an <span style="color:#da433a">image</span> <!--or <span style="color:#da433a">audio</span>--> file to encode it with data.
                 </p>
+                <div id="output" class="hidden" style="font-size: 1.5rem;">
+                    <span class="material-icons" style="position: absolute; top:6px; right:6px; cursor:pointer;"  id="hide-output">close</span>
+                    <canvas id="canvas"></canvas>
+                    <div class="button" id="download">download</div>
+                </div>
                 <div class="file-upload-container">
                     <!-- https://codepen.io/gaitho/pen/mjBBLP reference -->
-                    <div id="output" class="hidden">
-                        <canvas id="canvas"></canvas>
-                    </div>
-
+                    
                     <div id="options" class="hidden">
+                        <span class="material-icons" style="position: absolute; top:8px; right:8px; cursor:pointer;" id="hide-options">close</span>
                         <label for="fname">File name:</label>
                         <input type="text" id="fname" name="fname" value="" disabled autocomplete="off"><br><br>
                         <label for="message">Message:</label>
@@ -64,14 +73,14 @@
                         <label for="file-upload" id="file-drag" >
                             <img id="file-image" src="#" alt="Preview" class="hidden">
                             <div id="start">
-                            <i class="fa fa-download fa-3x" aria-hidden="true"></i>
+                            <span class="material-icons" style="font-size: 48px;">file_upload</span>
                             <div style="padding-top: 12px; padding-bottom: 24px;"></div>
                             <span id="file-upload-btn" class="button">Select a file</span>
                             </div>
                             <div id="messages"></div>
                             </div>
                         </label>
-                        <input id="file-upload" type="file" name="fileUpload" accept="image/audio/*" style="display:none;"/>
+                        <input id="file-upload" type="file" name="fileUpload" accept="image/*" style="display:none;"/>
                     </form>
                     
                 </div>
