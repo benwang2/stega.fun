@@ -6,39 +6,31 @@
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <script src="https://kit.fontawesome.com/43356c6d09.js" crossorigin="anonymous"></script>
-
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="resources/css/hamburgers.css">
         <link rel="shortcut icon" type="image/jpg" href="resources/images/favicon.jpg">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        
-        
+                
         <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
-        
-        
-
-        
+              
         <script src="script.js"></script>
         <script src="resources/js/steganography.js"></script>
     </head>
     <body>
+        <button id="hamburger" class="hamburger hamburger--arrow" style="top:24px;left:24px;" type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
         <div class="sidebar">
             <div style="padding-top:100px"></div>
             <div class="nav-link">
                 <a href="/" style="margin-left: 40px">HOME</a>
             </div>
             <div class="nav-link">
-                <a href="/about" style="margin-left: 40px">ABOUT</a>
+                <a href="about.html" style="margin-left: 40px">ABOUT</a>
             </div>
         </div>
-        <nav>
-            <button id="hamburger" class="hamburger hamburger--arrow" type="button">
-                <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
-                </span>
-            </button>
-        </nav>
         <center>
             <div class="wrapper">
                 <div class="title">
@@ -49,7 +41,7 @@
                 </p>
                 <div id="output" class="hidden" style="font-size: 1.5rem;">
                     <span class="material-icons" style="position: absolute; top:6px; right:6px; cursor:pointer;"  id="hide-output">close</span>
-                    <canvas id="canvas"></canvas>
+                    <canvas id="canvas" class="hidden"></canvas>
                     <div class="button" id="download">download</div>
                 </div>
                 <div class="file-upload-container">
@@ -64,9 +56,9 @@
                         <label for="secret">Secret:</label>
                         <input type="text" id="secret" name="secret" autocomplete="off"><br><br>
                         <div style="display: flex; flex-direction: row; justify-content: center;">
-                            <div class="button" id="encode">encode</div>
+                            <button type="button" class="button" id="encode">encode</button>
                             <div style="padding:12px"></div>
-                            <div class="button" id="decode">decode</div>
+                            <button type="button" class="button" id="decode">decode</button>
                         </div>
                     </div>
                     <form id="file-upload-form" class="uploader">

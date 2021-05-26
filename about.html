@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>stega.fun - Simple steganography tool</title>
+
+        <meta charset="UTF-8">
+
+        <meta property="og:title" content="Web steganography tools" />
+        <meta property="og:description" content="Encode your files with data in just a couple clicks."/>
+
+        <meta name="description" content="Steganography at your fingertips.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="resources/css/hamburgers.css">
+        <link rel="shortcut icon" type="image/jpg" href="resources/images/favicon.jpg">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+              
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <button id="hamburger" class="hamburger hamburger--arrow" style="top:24px;left:24px;" type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+        <div class="sidebar">
+            <div style="padding-top:100px"></div>
+            <div class="nav-link">
+                <a href="index.html" style="margin-left: 40px">HOME</a>
+            </div>
+            <div class="nav-link">
+                <a href="/" style="margin-left: 40px">ABOUT</a>
+            </div>
+        </div>
+        <center>
+            <div class="wrapper">
+                <div class="title">
+                    STEGA.FUN
+                </div>
+                <h1>
+                    How does it work?
+                </h1>
+                <p>
+                    Image steganography is implemented on this page using <a href="https://github.com/ricmoo/aes-js">AES-JS</a>
+                    for encryption and an HTML5 canvas for manipulation.
+                </p>
+            </div>
+            <footer>
+                <img id="footer-img" src="resources/images/transparent.png">
+            </footer>
+        </center>
+    </body>
+</html>
